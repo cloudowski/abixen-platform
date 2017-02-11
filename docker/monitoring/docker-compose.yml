@@ -1,0 +1,20 @@
+version: '2'
+services:
+  promserver:
+    image: prom/prometheus:v1.5.2
+    command: -config.file=/prometheus.conf -log.level=debug
+    ports:
+      - "9090:9090"
+#    restart: 'unless-stopped'
+    volumes:
+      - "$PWD/conf/prometheus.conf:/prometheus.conf"
+
+  grafana:
+    image: grafana/grafana:4.1.1
+    ports:
+      - "3000:3000"
+
+networks:
+  default:
+    external:
+      name: docker_default
