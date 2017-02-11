@@ -1,18 +1,33 @@
 version: '2'
 services:
-  promserver:
-    image: prom/prometheus:v1.5.2
-    command: -config.file=/prometheus.conf -log.level=debug
+  influxdb:
+    image: influxdb:1.2
     ports:
-      - "9090:9090"
-#    restart: 'unless-stopped'
+      - "8086:8086"
+      - "8083:8086"
+      - "8090:8090"
+      - "8099:8099"
+    environment:
+      INFLUXDB_DATA_ENGINE: tsm1
+
+  telegraf:
+    image: telegraf:1.2-alpine
     volumes:
-      - "$PWD/conf/prometheus.conf:/prometheus.conf"
+      - ./conf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
+    ports:
+      - "8125:8125"
+    depends_on:
+      - influxdb
+      - grafana
 
   grafana:
     image: grafana/grafana:4.1.1
+    volumes:
+      - ./conf/:/etc/grafana/scripts
     ports:
       - "3000:3000"
+    depends_on:
+      - influxdb
 
 networks:
   default:
