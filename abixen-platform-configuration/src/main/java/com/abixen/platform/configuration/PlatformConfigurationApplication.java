@@ -14,8 +14,6 @@
 
 package com.abixen.platform.configuration;
 
-import io.prometheus.client.spring.boot.EnablePrometheusEndpoint;
-import io.prometheus.client.spring.boot.EnableSpringBootMetricsCollector;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.config.server.EnableConfigServer;
@@ -25,8 +23,6 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @SpringBootApplication
 @EnableConfigServer
 @EnableEurekaClient
-@EnablePrometheusEndpoint
-@EnableSpringBootMetricsCollector
 public class PlatformConfigurationApplication {
 
     public static void main(String[] args) {

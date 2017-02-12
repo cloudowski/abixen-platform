@@ -14,8 +14,6 @@
 
 package com.abixen.platform.client.web;
 
-import io.prometheus.client.spring.boot.EnablePrometheusEndpoint;
-import io.prometheus.client.spring.boot.EnableSpringBootMetricsCollector;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -32,8 +30,6 @@ import org.springframework.retry.annotation.EnableRetry;
 @EnableEurekaClient
 @EnableFeignClients(basePackages = {"com.abixen.platform.client.web"})
 @EnableCircuitBreaker
-@EnablePrometheusEndpoint
-@EnableSpringBootMetricsCollector
 @SpringBootApplication
 public class PlatformWebClientApplication extends SpringBootServletInitializer {
 

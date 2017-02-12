@@ -14,8 +14,6 @@
 
 package com.abixen.platform.hystrix.dashboard;
 
-import io.prometheus.client.spring.boot.EnablePrometheusEndpoint;
-import io.prometheus.client.spring.boot.EnableSpringBootMetricsCollector;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -35,8 +33,6 @@ import org.springframework.retry.annotation.EnableRetry;
 @EnableHystrixDashboard
 @EnableTurbine
 @EnableEurekaClient
-@EnablePrometheusEndpoint
-@EnableSpringBootMetricsCollector
 public class PlatformHystrixDashboardApplication {
 
     public static void main(String[] args) {

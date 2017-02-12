@@ -15,8 +15,6 @@
 package com.abixen.platform.service.businessintelligence;
 
 import com.abixen.platform.service.businessintelligence.configuration.PlatformModulesPackages;
-import io.prometheus.client.spring.boot.EnablePrometheusEndpoint;
-import io.prometheus.client.spring.boot.EnableSpringBootMetricsCollector;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -32,8 +30,6 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
 @EnableRedisHttpSession
 @EnableEurekaClient
 @EnableCircuitBreaker
-@EnablePrometheusEndpoint
-@EnableSpringBootMetricsCollector
 @EnableFeignClients(basePackages = {PlatformModulesPackages.CLIENT})
 public class PlatformBusinessIntelligenceServiceApplication extends SpringBootServletInitializer {
 

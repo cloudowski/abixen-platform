@@ -14,6 +14,7 @@ services:
     image: telegraf:1.2-alpine
     volumes:
       - ./conf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
     ports:
       - "8125:8125"
     depends_on:

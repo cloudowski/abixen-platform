@@ -1,13 +1,11 @@
+{ "dashboard": 
 {
-  "annotations": {
-    "list": []
-  },
   "editMode": false,
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
   "hideControls": false,
-  "id": 1,
+  "id": null,
   "links": [],
   "rows": [
     {
@@ -147,4 +145,5 @@
   "timezone": "browser",
   "title": "abixen",
   "version": 2
+}
 }

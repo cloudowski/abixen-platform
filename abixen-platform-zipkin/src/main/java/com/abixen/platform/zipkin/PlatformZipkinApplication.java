@@ -14,8 +14,6 @@
 
 package com.abixen.platform.zipkin;
 
-import io.prometheus.client.spring.boot.EnablePrometheusEndpoint;
-import io.prometheus.client.spring.boot.EnableSpringBootMetricsCollector;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.sleuth.zipkin.stream.EnableZipkinStreamServer;
@@ -25,8 +23,6 @@ import org.springframework.retry.annotation.EnableRetry;
 @EnableRetry
 @SpringBootApplication
 @EnableZipkinStreamServer
-@EnablePrometheusEndpoint
-@EnableSpringBootMetricsCollector
 public class PlatformZipkinApplication {
 
     public static void main(String[] args) {

@@ -14,8 +14,6 @@
 
 package com.abixen.platform.service.webcontent;
 
-import io.prometheus.client.spring.boot.EnablePrometheusEndpoint;
-import io.prometheus.client.spring.boot.EnableSpringBootMetricsCollector;
 import com.abixen.platform.service.webcontent.configuration.PlatformWebContentServicePackages;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -31,8 +29,6 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
 @EnableRedisHttpSession
 @EnableEurekaClient
 @EnableFeignClients(basePackages = {PlatformWebContentServicePackages.CLIENT})
-@EnablePrometheusEndpoint
-@EnableSpringBootMetricsCollector
 public class PlatformWebContentApplication extends SpringBootServletInitializer {
 
     @Override
