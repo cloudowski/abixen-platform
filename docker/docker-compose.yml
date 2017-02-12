@@ -90,8 +90,8 @@ services:
       - zipkin
     volumes:
       - ../data/image-library:/data/image-library
-    extends:
-      service: base
+#    extends:
+#      service: base
 
   web-client:
     image: abixen-platform/abixen-platform-web-client
