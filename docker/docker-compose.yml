@@ -93,8 +93,8 @@ services:
       - zipkin
     volumes:
       - ../data/image-library:/data/image-library
-#    extends:
-#      service: base
+    extends:
+      service: base
 
   web-client:
     image: abixen-platform/abixen-platform-web-client
@@ -112,6 +112,8 @@ services:
     ports:
       - "9010:9010"
       - "18080:8080"
+    extends:
+      service: base
 
   hystrix-dashboard:
     image: abixen-platform/abixen-platform-hystrix-dashboard
